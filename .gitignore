@@ -1,0 +1,4 @@
+# build files
+*.out
+# lsp settings
+.clangd  
