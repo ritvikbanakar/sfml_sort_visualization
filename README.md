@@ -8,8 +8,8 @@ Tasks:
 - [ ] Setup Makefile
 - [x] Display Rectangles of varying heights
 - [x] Adjust number of rectangles to fit screen
+- [x] Add outlines to rectangles (inwards)
 - [ ] Move blocks via Bubble Sort
 - [ ] Add sound 
 - [ ] Add color
 - [ ] Add other sorts...
-- [ ] Add outlines to rectangles? (needs size recomputing)

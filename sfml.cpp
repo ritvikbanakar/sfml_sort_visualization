@@ -8,7 +8,6 @@ int main()
     const int SCREEN_HEIGHT = 1000; 
     const int SCREEN_WIDTH = 1000;
     const int REC_WIDTH = 10;
-    // no outline but rectangle and screen size now variable
     std::vector<sf::RectangleShape> rectangles(SCREEN_WIDTH/REC_WIDTH);
     sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Hello World!");
     int pos = 0;
@@ -19,6 +18,9 @@ int main()
         r = sf::RectangleShape(sf::Vector2f(REC_WIDTH, random));
         r.setFillColor(sf::Color::White);
         r.move((REC_WIDTH) * pos, (SCREEN_HEIGHT - random));
+        // add outline, negative thickness adds outline inwards
+        r.setOutlineThickness(-1.5);
+        r.setOutlineColor(sf::Color::Black);
         pos++;
     }
     while (window.isOpen())
