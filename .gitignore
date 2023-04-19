@@ -1,4 +1,5 @@
 # build files
 *.out
+*.dSYM
 # lsp settings
 .clangd  
