@@ -9,7 +9,9 @@ Tasks:
 - [x] Display Rectangles of varying heights
 - [x] Adjust number of rectangles to fit screen
 - [x] Add outlines to rectangles (inwards)
-- [ ] Move blocks via Bubble Sort
+- [x] Highlight biggest/smallest blocks (Selection Sort)
+- [ ] Move biggest/smallest blocks (Selection Sort)
+- [ ] Smooth triangle at end (anti-aliasing?)
 - [ ] Add sound 
 - [ ] Add color
 - [ ] Add other sorts...

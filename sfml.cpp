@@ -2,7 +2,17 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
+#include <algorithm>
 #include <iostream>
+void selection_sort(std::vector<sf::RectangleShape>& recs, int pos) {
+    auto biggest = std::max_element(recs.begin() + pos, recs.end(), 
+            [] (sf::RectangleShape const lhs, sf::RectangleShape const rhs) {
+                return lhs.getSize().y < rhs.getSize().y;
+            });
+    biggest->setFillColor(sf::Color::Red);
+}
+
+
 int main()
 {
     const int SCREEN_HEIGHT = 1000; 
@@ -31,7 +41,7 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
+        selection_sort(rectangles, 0);
         window.clear();
         for (auto r : rectangles) {
             window.draw(r);
