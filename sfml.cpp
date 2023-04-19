@@ -7,17 +7,18 @@ int main()
 {
     const int SCREEN_HEIGHT = 1000; 
     const int SCREEN_WIDTH = 1000;
-    // TODO: adjust number of rectangles chosen to screen size
-    std::vector<sf::RectangleShape> rectangles(18);
+    const int REC_WIDTH = 10;
+    // no outline but rectangle and screen size now variable
+    std::vector<sf::RectangleShape> rectangles(SCREEN_WIDTH/REC_WIDTH);
     sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Hello World!");
     int pos = 0;
     // providing seed value
     srand((unsigned) time(NULL));
     for (auto& r : rectangles) {
         int random = rand() % SCREEN_HEIGHT;
-        r = sf::RectangleShape(sf::Vector2f(50, random));
+        r = sf::RectangleShape(sf::Vector2f(REC_WIDTH, random));
         r.setFillColor(sf::Color::White);
-        r.move(55 * pos, (SCREEN_HEIGHT - random));
+        r.move((REC_WIDTH) * pos, (SCREEN_HEIGHT - random));
         pos++;
     }
     while (window.isOpen())
